@@ -1,0 +1,9 @@
+<apex:page standardController="Case" renderAs="pdf">
+    <apex:pageBlock title="Test">
+    <p>Hello World!</p>
+    <p>Subject: <apex:outputText >{!Case.Subject}</apex:outputText></p>
+    <p>Account Name: <apex:outputText >{!Case.Account.Name}</apex:outputText></p>
+    <p>Account Number: <apex:outputText >{!Case.Account.AccountNumber}</apex:outputText></p>
+        
+    </apex:pageBlock>                   
+</apex:page>
