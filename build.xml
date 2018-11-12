@@ -65,8 +65,8 @@
     </target>
 
     <target name="justDeployCode">
-      <!-- Upload the contents of the "codepkg" directory, //ERS181112 #50378 -->
-      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId0="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" rollbackOnError="true">
+      <!-- Upload the contents of the "codepkg" directory, //ERS181112 #50378  sessionId="${sf.sessionId}" -->
+      <sf:deploy username="${sf.username}" password="${sf.password}"  serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" rollbackOnError="true">
       </sf:deploy>
     </target>
 
@@ -92,8 +92,8 @@
     </target>
 
     <target name="retrieveCode">
-      <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
-      <sf:retrieve username="${dev.username}" password="${dev.password}" sessionId0="${dev.sessionId}" serverurl="${dev.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
+      <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -sessionId0="${sf.sessionId}" -->
+      <sf:retrieve username="${dev.username}" password="${dev.password}" serverurl="${dev.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
     </target>
 
     <!-- Shows deploying code, running all tests, and running tests (1 of which fails), and logging. -->
