@@ -11,7 +11,7 @@
     <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
     <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
     <condition property="sf.test.username" value=""> <not> <isset property="sf.test.username"/> </not> </condition>
-    <condition property="sf.test..password" value=""> <not> <isset property="sf.test.password"/> </not> </condition>
+    <condition property="sf.test.password" value=""> <not> <isset property="sf.test.password"/> </not> </condition>
 
     <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
         <classpath>
@@ -64,6 +64,12 @@
       </sf:deploy>
     </target>
 
+    <target name="justDeployCode">
+      <!-- Upload the contents of the "codepkg" directory, //ERS181112 #50378 -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" rollbackOnError="true">
+      </sf:deploy>
+    </target>
+
 	 <!-- Shows deploying code with no TestLevel sepcified -->
     <target name="deployCodeNoTestLevelSpecified">
       <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="codepkg" rollbackOnError="true"/>
@@ -80,9 +86,14 @@
     </target>
 
     <!-- Shows retrieving code; only succeeds if done after deployCode -->
-    <target name="retrieveCode">
+    <target name="retrieveCode0">
       <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
       <sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
+    </target>
+
+    <target name="retrieveCode">
+      <!-- Retrieve the contents listed in the file codepkg/package.xml into the codepkg directory -->
+      <sf:retrieve username="${dev.username}" password="${dev.password}" sessionId="${dev.sessionId}" serverurl="${dev.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
     </target>
 
     <!-- Shows deploying code, running all tests, and running tests (1 of which fails), and logging. -->
