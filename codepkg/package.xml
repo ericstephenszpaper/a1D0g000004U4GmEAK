@@ -9,17 +9,21 @@ ERS181112 o2o testing</description>
         <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
         <name>CustomField</name>
     </types>
+<!--
     <types>
         <members>MSH_TobiProviderWithdraw</members>
         <members>MSH_TobiPatientWithdraw</members>
         <name>ApexPage</name>
     </types>
+    Component c:msh_entrestofaxheader
+-->
 <!--
     <types>
         <members>Stack__c</members>
         <name>CustomObject</name>
     </types>
 -->
+<!--
     <types>
         <members>Case.Cosentyx_Reimbursement</members>
         <name>RecordType</name>
@@ -28,6 +32,7 @@ ERS181112 o2o testing</description>
         <members>Reimbursement</members>
         <name>BusinessProcess </name>
     </types>
+-->
     <types>
         <members>zzAction_Index_Page_js</members>
         <members>zzAction_Stack_Complete_js</members>
