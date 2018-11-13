@@ -96,6 +96,10 @@
       <sf:retrieve username="${dev.username}" password="${dev.password}" serverurl="${dev.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="codepkg" unpackaged="codepkg/package.xml"/>
     </target>
 
+    <target name="pushRepo">
+      <!-- add all of the expanded package materials back for long term storage -->
+    </target>
+
     <!-- Shows deploying code, running all tests, and running tests (1 of which fails), and logging. -->
     <target name="deployCodeFailingTest">
       <!-- Upload the contents of the "codepkg" package, running all tests -->
