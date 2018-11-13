@@ -7,6 +7,15 @@ ERS181112 o2o testing</description>
         <!--<members>Stack__c.Document_Type__c</members>-->
         <members>ZPAPER__zStack__c.Case_Record_Type__c</members>
         <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
+<!--
+        ZPAPER__zStack__c.ZPAPER__Case__c
+ZPAPER__zStack__c.ZPAPER__Patient__c
+ZPAPER__zStack__c.ZPAPER__LastName__c
+ZPAPER__zStack__c.Case_Record_Type__c
+ZPAPER__zStack__c.ZPAPER__faxType__c
+ZPAPER__zStack__c.ZPAPER__Birthdate__c
+ZPAPER__zStack__c.ZPAPER__Classification__c
+ZPAPER__zStack__c.ZPAPER__FirstName__c -->
         <name>CustomField</name>
     </types>
 <!--
@@ -40,4 +49,5 @@ ERS181112 o2o testing</description>
         <name>StaticResource</name>
     </types>
     <version>27.0</version>
+    <!-- https://github.com/ericstephenszpaper/a1D0g000004U4GmEAK/raw/develop/mckesson.com.nov.dev.-20200._20200.20411736.wdz.zip -->
 </Package>
