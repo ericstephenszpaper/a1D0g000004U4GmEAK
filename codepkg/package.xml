@@ -9,6 +9,7 @@ ERS181112 o2o testing</description>
         <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
         <name>CustomField</name>
     </types>
+<!--
     <types>
         <members>BusinessProcess</members>
         <name>CustomObject</name>
@@ -17,6 +18,7 @@ ERS181112 o2o testing</description>
         <members>Case.Cosentyx_Reimbursement</members>
         <name>RecordType</name>
     </types>
+-->
     <types>
         <members>zzAction_Index_Page_js</members>
         <members>zzAction_Stack_Complete_js</members>
