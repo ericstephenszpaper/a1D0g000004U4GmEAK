@@ -15,6 +15,7 @@ ERS181112 o2o testing</description>
         <name>CustomObject</name>
     </types>
 -->
+<!--
     <types>
         <members>Case.Cosentyx_Reimbursement</members>
         <name>RecordType</name>
@@ -22,7 +23,8 @@ ERS181112 o2o testing</description>
     <types>
         <members>Reimbursement</members>
         <name>BusinessProcess </name>
-    </type>
+    </types>
+-->
     <types>
         <members>zzAction_Index_Page_js</members>
         <members>zzAction_Stack_Complete_js</members>
