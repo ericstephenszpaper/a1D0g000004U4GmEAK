@@ -9,6 +9,11 @@ ERS181112 o2o testing</description>
         <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
         <name>CustomField</name>
     </types>
+    <types>
+        <members>MSH_TobiProviderWithdraw</members>
+        <members>MSH_TobiPatientWithdraw</members>
+        <name>ApexPage</name>
+    </types>
 <!--
     <types>
         <members>Stack__c</members>
