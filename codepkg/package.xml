@@ -1,47 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>o2oTest2</fullName>
-    <description>ASM181109 o2o test
-ERS181112 o2o testing</description>
     <types>
-        <!--<members>Stack__c.Document_Type__c</members>-->
         <members>ZPAPER__zStack__c.Case_Record_Type__c</members>
         <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
-<!--
-        ZPAPER__zStack__c.ZPAPER__Case__c
-ZPAPER__zStack__c.ZPAPER__Patient__c
-ZPAPER__zStack__c.ZPAPER__LastName__c
-ZPAPER__zStack__c.Case_Record_Type__c
-ZPAPER__zStack__c.ZPAPER__faxType__c
-ZPAPER__zStack__c.ZPAPER__Birthdate__c
-ZPAPER__zStack__c.ZPAPER__Classification__c
-ZPAPER__zStack__c.ZPAPER__FirstName__c -->
         <name>CustomField</name>
     </types>
-<!--
-    <types>
-        <members>MSH_TobiProviderWithdraw</members>
-        <members>MSH_TobiPatientWithdraw</members>
-        <name>ApexPage</name>
-    </types>
-    Component c:msh_entrestofaxheader
--->
-<!--
-    <types>
-        <members>Stack__c</members>
-        <name>CustomObject</name>
-    </types>
--->
-<!--
-    <types>
-        <members>Case.Cosentyx_Reimbursement</members>
-        <name>RecordType</name>
-    </types>
-    <types>
-        <members>Reimbursement</members>
-        <name>BusinessProcess </name>
-    </types>
--->
     <types>
         <members>zzAction_Index_Page_js</members>
         <members>zzAction_Stack_Complete_js</members>
@@ -49,5 +12,4 @@ ZPAPER__zStack__c.ZPAPER__FirstName__c -->
         <name>StaticResource</name>
     </types>
     <version>27.0</version>
-    <!-- https://github.com/ericstephenszpaper/a1D0g000004U4GmEAK/raw/develop/mckesson.com.nov.dev.-20200._20200.20411736.wdz.zip -->
 </Package>
