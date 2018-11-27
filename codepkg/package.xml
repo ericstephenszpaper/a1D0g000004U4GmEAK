@@ -1,15 +1,2 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>ZPAPER__zStack__c.Case_Record_Type__c</members>
-        <members>ZPAPER__zStack__c.ZPAPER__Classification__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>zzAction_Index_Page_js</members>
-        <members>zzAction_Stack_Complete_js</members>
-        <members>zzAction_zStack_Library_js</members>
-        <name>StaticResource</name>
-    </types>
-    <version>27.0</version>
-</Package>
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata"><fullName></fullName><description></description><types><members></members><members></members><members></members><members></members><members></members><members></members><name></name></types><types><members></members><name></name></types><types><members></members><members></members><members></members><name></name></types><types><members></members><name></name></types><types><members></members><name></name></types><types><members></members><members></members><members></members><name></name></types><version></version></Package>
+<!-- Last updated Tue Nov 27 16:39:11 EST 2018 -->
