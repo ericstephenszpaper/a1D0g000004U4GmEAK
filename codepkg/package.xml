@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata"><fullName></fullName><description></description><types><members></members><members></members><members></members><members></members><members></members><members></members><name></name></types><types><members></members><name></name></types><types><members></members><members></members><members></members><name></name></types><types><members></members><name></name></types><types><members></members><name></name></types><types><members></members><members></members><members></members><name></name></types><version></version></Package>
-<!-- Last updated Thu Dec 06 15:57:49 EST 2018 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>o2oTest2</fullName>
+    <description>ASM181109 o2o test
+ERS181112 o2o testing</description>
+    <types>
+        <members>Case.Reimbursement</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>Stack__c.Document_Type__c</members>
+        <members>ZPAPER__zStack__c.Case_Record_Type__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Case.Cosentyx_Reimbursement</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>zzAction_Index_Page_js</members>
+        <members>zzAction_Stack_Complete_js</members>
+        <members>zzAction_zStack_Library_js</members>
+        <name>StaticResource</name>
+    </types>
+    <version>27.0</version>
+</Package>
