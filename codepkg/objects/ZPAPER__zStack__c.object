@@ -10,6 +10,8 @@
                 <fullName>012f4000000goz1</fullName>
                 <default>false</default>
                 <controllingFieldValues>AIMOVIG</controllingFieldValues>
+                <controllingFieldValues>Cosentyx</controllingFieldValues>
+                <controllingFieldValues>Cosentyx Direct to SP</controllingFieldValues>
                 <controllingFieldValues>Entresto</controllingFieldValues>
                 <controllingFieldValues>NPAF</controllingFieldValues>
                 <controllingFieldValues>PANO</controllingFieldValues>
@@ -60,6 +62,8 @@
                 <fullName>012f4000000goyt</fullName>
                 <default>false</default>
                 <controllingFieldValues>AIMOVIG</controllingFieldValues>
+                <controllingFieldValues>Cosentyx</controllingFieldValues>
+                <controllingFieldValues>Cosentyx Direct to SP</controllingFieldValues>
                 <controllingFieldValues>Entresto</controllingFieldValues>
                 <controllingFieldValues>TOBI</controllingFieldValues>
             </picklistValues>
@@ -140,54 +144,6 @@
         </picklist>
         <required>false</required>
         <trackHistory>true</trackHistory>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>ZPAPER__Classification__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Classification</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Intake</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Entresto</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>TOBI</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>PANO</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>NPAF</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>AIMOVIG</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cosentyx</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Mayzent Support Program</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Cosentyx Direct to SP</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
 </CustomObject>

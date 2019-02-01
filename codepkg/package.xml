@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>o2oTest2Clone</fullName>
-    <description>ASM181109 o2o test
-ERS181112 o2o testing</description>
     <types>
         <members>MSH_AuditHistoryTrackerService</members>
         <members>MSH_ErrorLogger</members>

@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Incoming document stack for zPaper solution.</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Attach_to_Contact_Type__c</fullName>
+        <description>Used in &quot;Enbrel Contact&quot; DE form to filter Contact result values by the correct Contact record type when the user is doing a Contact lookup.</description>
+        <externalId>false</externalId>
+        <label>Attach to Contact Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Patient</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Attached_To_Case_At__c</fullName>
+        <description>The time at which the document was attached to a Case</description>
+        <externalId>false</externalId>
+        <label>Attached At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Attached_To_Case_By__c</fullName>
+        <description>The individual that Attached the document to the applicable Case</description>
+        <externalId>false</externalId>
+        <label>Attached By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attributes_Completed_By__c</fullName>
+        <description>The individual who completed the attributes in the DE panel.</description>
+        <externalId>false</externalId>
+        <label>Attributes Completed By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attributes_Entered_At__c</fullName>
+        <description>The time in which the Attribute values were determined (or last updated) by saving the DE panel.</description>
+        <externalId>false</externalId>
+        <label>Attributes Entered At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Bucket__c</fullName>
+        <externalId>false</externalId>
+        <label>Bucket</label>
+        <picklist>
+            <controllingField>Program_Name__c</controllingField>
+            <picklistValues>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Projects Bucket</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Refill Too Soon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun Pharma PAP</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CSR_Processing_Time__c</fullName>
+        <description>Number of business hours (M-F 8am-8pm) between CSR taking ownership of the stack to stack Status updated to Complete</description>
+        <externalId>false</externalId>
+        <formula>Completed_On__c - Processing_Start_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CSR Processing Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Parent Case record related to this Document Stack.</description>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Stacks</relationshipLabel>
+        <relationshipName>Stacks</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <description>Picklist to track the communication type e.g. ‘Fax’</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Completed_By__c</fullName>
+        <description>User who updated the status field of the Stack to Complete</description>
+        <externalId>false</externalId>
+        <label>Completed By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed_On__c</fullName>
+        <description>The date/time when the status of the Stack was updated to Complete</description>
+        <externalId>false</externalId>
+        <label>Completed On</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Created__c</fullName>
+        <description>Created date formatted for display in list views (shows date only)</description>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <description>Picklist to identify the type of document attached to the Stack</description>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <picklist>
+            <controllingField>Program_Name__c</controllingField>
+            <picklistValues>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology New Enrollment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benefit Summary Faxes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ExpressStart</fullName>
+                <default>false</default>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Service IV</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IV Only</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MOU</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nurse Partner Request</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA Form</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA Only</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power of Attorney</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prescription (Rx)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Research Required</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SafetyNet IV</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claim Form</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cover Page</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denial Letter</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical Records</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fax_Line__c</fullName>
+        <description>Returns the name of the program associated with the fax line</description>
+        <externalId>false</externalId>
+        <formula>CASE(Program_Name__c, 
+&quot;Oncology&quot;, &quot;Oncology&quot;, 
+&quot;Main&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fax Line</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Image_in_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the stack&apos;s image is in use by another record, ex. Prescription Image.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the stack&apos;s image is in use by another record, ex. Prescription Image.</inlineHelpText>
+        <label>Image in Use</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Labeler_Patient_DoB__c</fullName>
+        <description>The Patient DOB as captured by the Labeler when conducting initial Data Entry.</description>
+        <externalId>false</externalId>
+        <label>Patient DOB</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Labeler_Patient_First_Name__c</fullName>
+        <description>The Patient First Name as captured by the Labeler when conducting initial Data Entry.</description>
+        <externalId>false</externalId>
+        <label>Patient First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeler_Patient_Last_Name__c</fullName>
+        <description>The Patient Last Name as captured by the Labeler when conducting initial Data Entry.</description>
+        <externalId>false</externalId>
+        <label>Patient Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeling_End_Time__c</fullName>
+        <description>Date/time when the stack is assigned to a Processing queue</description>
+        <externalId>false</externalId>
+        <label>Labeling End Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Lock_Stack__c</fullName>
+        <description>Hyperlink that allows user to lock the Stack record</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://&quot; &amp; $Setup.ZPAPER__zpaper__c.ZPAPER__server__c &amp; &quot;/kb/jsp/SF_find.jsp?go=execRulesEngine.jsp&amp;updateDB=true&amp;X_buttonAction=Lock&amp;X_lockUser=&quot;&amp; $User.Username&amp;&quot;&amp;dbID=&quot; &amp; receivedId__c &amp; &quot;&amp;SFserver=&quot; &amp; $Api.Partner_Server_URL_310 &amp; &quot;&amp;SFsession=&quot; &amp; $Api.Session_ID, &quot;Lock&quot;,&quot;Stack&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lock</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mark_as_Complete__c</fullName>
+        <description>Hyperlink to update status of the Stack field to Complete</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/&apos;, &apos;Mark as Complete&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mark as Complete</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Process_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Process Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>A notes field to allow a User to track any special notes against the inbound Stack</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Pages__c</fullName>
+        <description>The number of pages in the Stack</description>
+        <externalId>false</externalId>
+        <label># of Pages</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origin__c</fullName>
+        <description>Picklist to track the communication type e.g. ‘Fax’</description>
+        <externalId>false</externalId>
+        <label>Origin</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Stack_Number__c</fullName>
+        <description>In the event an incoming Stack is split into multiple Stacks, this field is populated with a reference to the original Stack number</description>
+        <externalId>false</externalId>
+        <label>Parent Stack Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_DOB_SYNC__c</fullName>
+        <description>** DO NOT DELETE THIS FIELD ** This field is required to synchronize the updates made via the Data Entry panel. This field is needed because Salesforce won&apos;t&apos; allow us to update cross-object (reference) fields.</description>
+        <externalId>false</externalId>
+        <label>Patient DOB SYNC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Patient_DOB__c</fullName>
+        <externalId>false</externalId>
+        <formula>Patient__r.Birthdate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient DOB DEPRECATED</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Patient_First_Name_SYNC__c</fullName>
+        <description>** DO NOT DELETE THIS FIELD ** This field is required to synchronize the updates made via the Data Entry panel. This field is needed because Salesforce won&apos;t&apos; allow us to update cross-object (reference) fields.</description>
+        <externalId>false</externalId>
+        <label>Patient First Name SYNC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Patient__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient First Name DEPRECATED</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Last_Name_SYNC__c</fullName>
+        <description>This field is required to synchronize the updates made via the Data Entry panel. This field is needed because Salesforce won&apos;t&apos; allow us to update cross-object (reference) fields.</description>
+        <externalId>false</externalId>
+        <label>Patient Last Name SYNC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Patient__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient Last Name DEPRECATED</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Mobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Patient Mobile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Patient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to the Patient to which this Stack is related;
+Changed field label to contact as part of Enbrel project</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Stacks</relationshipLabel>
+        <relationshipName>Stacks</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <description>Picklist to allow for Priority designation on the inbound Stack</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Processing_Start_Time__c</fullName>
+        <description>Date/time of when CSR takes ownership of the Stack from the Processing queue</description>
+        <externalId>false</externalId>
+        <label>Processing Start Time</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Program_Name_New__c</fullName>
+        <defaultValue>&quot;TevaCares&quot;</defaultValue>
+        <description>Patient Assistance Program name. This field is used on the user interface and is different from the field zAction Program Name.</description>
+        <externalId>false</externalId>
+        <label>Program Name</label>
+        <length>35</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Name__c</fullName>
+        <description>This field is updated behind the scenes by a zPaper zAction rule and is used in subsequent formulas.</description>
+        <externalId>false</externalId>
+        <label>zAction Program Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Teva</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enbrel Support Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ExpressStart Stack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUN PHARMA Patient Access Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Provider_First_Name__c</fullName>
+        <description>The First Name of the Provider related to the inbound Stack</description>
+        <externalId>false</externalId>
+        <label>Provider First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provider_Last_Name__c</fullName>
+        <description>The Last Name of the Provider related to the inbound Stack</description>
+        <externalId>false</externalId>
+        <label>Provider Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provider_NPI__c</fullName>
+        <description>The NPI of the Provider related to the inbound Stack</description>
+        <externalId>false</externalId>
+        <label>Provider NPI</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Queue__c</fullName>
+        <description>Queue picklist field that is displayed on the zPaper Add Attributes data entry panel</description>
+        <externalId>false</externalId>
+        <label>Queue</label>
+        <picklist>
+            <controllingField>Program_Name__c</controllingField>
+            <picklistValues>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Teva</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+                <controllingFieldValues>Oncology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun Pharma PAP</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <description>Timestamp of when the Stack was originally received</description>
+        <externalId>false</externalId>
+        <label>Received Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Type</label>
+        <picklist>
+            <controllingField>Program_Name__c</controllingField>
+            <picklistValues>
+                <fullName>Adverse Event</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enbrel ExpressStart</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enbrel Support Program</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotline</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Potential Adverse Event</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Complaint</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reimbursement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Enbrel Support Program</controllingFieldValues>
+                <controllingFieldValues>ExpressStart Stack</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun Pharma PAP</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun Pharma Reimbursement</fullName>
+                <default>false</default>
+                <controllingFieldValues>SUN PHARMA Patient Access Services</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <description>Incoming fax number</description>
+        <externalId>false</externalId>
+        <label>Caller ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Split_By__c</fullName>
+        <description>The name of the individual that split the stack into individual documents (and subsequent new stack records)</description>
+        <externalId>false</externalId>
+        <label>Split By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Split_Occurred_At__c</fullName>
+        <description>This is the date/time at which the Split Occurred</description>
+        <externalId>false</externalId>
+        <label>Split Occurred At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The current status of the Stack</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labeled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Stack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Split from Stack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Labeling_Time__c</fullName>
+        <description>The number of business hours (M-F 8am-8pm) between Received Date and the time the stack is assigned to a Processing queue</description>
+        <externalId>false</externalId>
+        <formula>Labeling_End_Time__c - Received_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Labeling Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Processing_Time__c</fullName>
+        <description>The number of business hours (M-F 8am-8pm) between Received Date and stack being marked as Complete</description>
+        <externalId>false</externalId>
+        <formula>Completed_On__c -  Received_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Processing Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>View_Stack__c</fullName>
+        <description>A hyperlink to view the document image</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://&quot; &amp; $Setup.ZPAPER__zpaper__c.ZPAPER__server__c &amp; &quot;/kb/jsp/SF_find.jsp?go=SF_files.jsp&amp;dbID=&quot; &amp; receivedId__c &amp; &quot;&amp;SFserver=&quot; &amp; $Api.Partner_Server_URL_310 &amp; &quot;&amp;SFsession=&quot; &amp; $Api.Session_ID, &quot;View&quot;,&quot;Stack&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>faxAgain__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Send Again</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>faxType__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>zDoc Type</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>groupID__c</fullName>
+        <description>holds fax id from FTP</description>
+        <externalId>false</externalId>
+        <label>Group ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>imageIDs__c</fullName>
+        <description>holds a list of FTP fax IDs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>holds a list of FTP fax IDs</inlineHelpText>
+        <label>Image IDs</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>latestFax__c</fullName>
+        <description>The time when the latest Document arrived that is associated with this record.</description>
+        <externalId>false</externalId>
+        <label>Latest Document</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>newFax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>New Document</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>outboundFaxTemplate__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Outbound Fax Template</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>parentDBId__c</fullName>
+        <description>In the event an incoming Stack is split into multiple Stacks, this field is populated with a reference to the original Stack ID</description>
+        <externalId>false</externalId>
+        <label>Parent Stack ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>producedId__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Produced ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>receivedId__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Received ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sentFaxAt__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Sent Document At</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>sentFaxStatus__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Sent Document Status</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sentFaxTo__c</fullName>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Sent Document To</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sentFax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>zPaper field used with Salesforce workflows and zActions.</description>
+        <externalId>false</externalId>
+        <label>Sent Document</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <label>Stack</label>
+    <listViews>
+        <fullName>Test_UAT_View</fullName>
+        <columns>NAME</columns>
+        <columns>Number_of_Pages__c</columns>
+        <columns>Attributes_Entered_At__c</columns>
+        <columns>Bucket__c</columns>
+        <columns>Source__c</columns>
+        <columns>Case__c</columns>
+        <columns>Category__c</columns>
+        <columns>Channel__c</columns>
+        <columns>Patient__c</columns>
+        <columns>CSR_Processing_Time__c</columns>
+        <columns>Document_Type__c</columns>
+        <columns>Fax_Line__c</columns>
+        <columns>groupID__c</columns>
+        <columns>imageIDs__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Test UAT View</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Stack Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stacks</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Assigned_Stack</fullName>
+        <active>true</active>
+        <description>Stack is considered assigned if it is owned by an individual user.</description>
+        <label>Assigned Stack</label>
+        <picklistValues>
+            <picklist>Attach_to_Contact_Type__c</picklist>
+            <values>
+                <fullName>Patient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bucket__c</picklist>
+            <values>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Projects Bucket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>Benefit Summary Faxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cover Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denial Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ExpressStart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Service IV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IV Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurse Partner Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power of Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription %28Rx%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafetyNet IV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Name__c</picklist>
+            <values>
+                <fullName>Enbrel Support Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ExpressStart Stack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUN PHARMA Patient Access Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teva</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Queue__c</picklist>
+            <values>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Record_Type__c</picklist>
+            <values>
+                <fullName>Sun Pharma PAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sun Pharma Reimbursement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Stack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Split from Stack</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Unassigned_Stack</fullName>
+        <active>true</active>
+        <description>Stack is considered unassigned if it is owned by a queue.</description>
+        <label>Unassigned Stack</label>
+        <picklistValues>
+            <picklist>Attach_to_Contact_Type__c</picklist>
+            <values>
+                <fullName>Patient</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bucket__c</picklist>
+            <values>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Projects Bucket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Channel__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>Benefit Summary Faxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cover Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denial Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ExpressStart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Service IV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IV Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MOU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Records</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nurse Partner Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology New Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power of Attorney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription %28Rx%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proof of Income</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Enrollment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SafetyNet IV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upload</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Name__c</picklist>
+            <values>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SUN PHARMA Patient Access Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teva</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Queue__c</picklist>
+            <values>
+                <fullName>Main Benefits Investigation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Re-App Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Refill Too Soon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Program Sort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oncology Refill</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Record_Type__c</picklist>
+            <values>
+                <fullName>Sun Pharma PAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sun Pharma Reimbursement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labeled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Stack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Split from Stack</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Fax_Line__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Source__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Received_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Source__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Received_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Labeler_Patient_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Provider_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Provider_NPI__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Document_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
